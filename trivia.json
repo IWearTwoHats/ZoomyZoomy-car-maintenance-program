@@ -1,0 +1,18 @@
+[
+	{
+		"scene": "Engine is dead. wat do?",
+		"answers": [
+			"call david",
+			"die"
+		],
+		"correct": 0
+	},
+	{
+		"scene": "You have a weird light that appeared on your dashbored. It oddly looks like a Red Genie lamp, what shall you do about this?",
+		"answers": [
+			"Call David",
+			"die"
+		],
+		"correct": 1
+	}    
+]
