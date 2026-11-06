@@ -1,18 +1,46 @@
 [
 	{
-		"scene": "Engine is dead. wat do?",
+		"scene": "You're about to head home, but when you turn the key, nothing happens. The lights on the dashboard remain dark.",
 		"answers": [
-			"call david",
-			"die"
-		],
-		"correct": 0
+			{
+				"name": "Wait an hour",
+				"type": "one_time_dialogue",
+				"dialogue": "waitBatteryDead"
+			},
+			{
+				"name": "Call a friend for a jumpstart",
+				"type": "triv_success",
+				"setattrs": {"batteryBad": true},
+				"correctDialogue": "With the help of your friend, you successfully start your car."
+			},
+			{
+				"name": "Find another way to be picked up",
+				"type": "triv_success",
+				"setattrs": {"carStranded": true},
+				"correctDialogue": "You decide to take the bus home, but your car is still stranded."
+			}
+		]
 	},
 	{
-		"scene": "You have a weird light that appeared on your dashbored. It oddly looks like a Red Genie lamp, what shall you do about this?",
+		"scene": "You have a weird light that appeared on your dashboard. It oddly looks like a Red Genie lamp, what shall you do about this?",
 		"answers": [
-			"Call David",
-			"die"
-		],
-		"correct": 1
-	}    
+			{
+				"name": "Find another way to be picked up",
+				"type": "triv_success",
+				"setattrs": {"carAtMechanic": true},
+				"correctDialogue": "Your dad manages to slip out of work to pick you up. Your car has been towed to the mechanic."
+			},
+			{
+				"name": "Search it online",
+				"type": "one_time_dialogue",
+				"dialogue": "searchOilLight"
+			},
+			{
+				"name": "Ignore it",
+				"type": "triv_success",
+				"setattrs": {"engineSeizeTime": 2},
+				"correctDialogue": "You decide to ignore the light. Nothing bad could happen... right?"
+			}
+		]
+	}
 ]
