@@ -1,5 +1,8 @@
 # Car Maintenance Game
 
+This is for school. I have other people working on this, but they will count as my contributions.
+Don't expect perfection.
+
 ## Files
 ### `dialogue.json`
 Contains various dialogue strings that can appear anywhere ingame.
