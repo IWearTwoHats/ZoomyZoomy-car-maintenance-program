@@ -1,0 +1,8 @@
+[
+	"sceneFaultyBattery",
+	"sceneLowFuel",
+	"sceneLowCoolant",
+	"sceneOilPressure",
+	"sceneWinterDischarge",
+	"sceneTirePop"
+]
