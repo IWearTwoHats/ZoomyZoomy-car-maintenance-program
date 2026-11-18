@@ -9,3 +9,6 @@ The game itself.
 
 ### `trivia.json`
 Contains the trivia found ingame.
+
+### `random_encounter.json`
+Contains the scenes that can be randomly encountered through the game.
