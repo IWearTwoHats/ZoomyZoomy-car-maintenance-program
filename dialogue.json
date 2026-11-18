@@ -1,4 +1,15 @@
 {
+	"gamePrelogue": "You are a young high school student with your whole life ahead of you. After learning to drive, you wish to be able to take yourself to school. Unfortunatly, due to your parents busy schedule, you don't have a car to drive. That is, until your uncle offered to lend his car for the duration of the school term. While the car is in your hands, *all* the maintenance is up to you.",
+	"lookDashboard": "If any problem occours, one of the first things you should do is observe the dashboard.",
 	"searchOilLight": "According to one Reddit user, that symbol is the Oil Pressure light.",
-	"waitBatteryDead": "You wait an hour. Nothing happens."
+	"waitBatteryDead": "You wait an hour. Nothing happens.",
+	"lookGasGauge": "You look at your dashboard and notice your gas gauge is on E. You remember a sign you passed 3 miles back saying \"Next Gas 4 Miles\". Seems important.",
+	"loudMusic":"You turned up your music and now you are jamming out to California Girls, what could happen.... Right?",
+	"PoppedHood": "You notice a very loud hissing sound and a lot more steam coming from the front engine bay. What do you do next?",
+	"newBattery": "Your parents took you to the store and you got a new battery, they told you not to let it die again. You learned the importance of not just letting your car sit for a long time. (Congrats)",
+	"mechanicFillCoolant": "After explaining the situation, your car is towed to the mechanic, where he patches the leak, and refills your radiatior.",
+	"soapPatchTire": "This is an execellent way of locating the puncture in your tire cause it with cause it to bubble revealing where the hole is to patch it, you found where the air is leaking and was able to patch it.",
+	"torchBad": "This is a very bad idea, this would be a very risky way of finding the puncture due to being able to cause fire damage to the tire which can then lead to a fire",
+	"noPatience": "This idea *COULD* work technically, but why put the money into a new tire if this one is still in really good condition? (Be patient young one)",
+	"yesNo": "This is a really good way of finding the puncture, but the only flaw is this takes more time and effort"
 }

@@ -1,5 +1,5 @@
-[
-	{
+{
+	"sceneFaultyBattery": {
 		"scene": "You're about to head home, but when you turn the key, nothing happens. The lights on the dashboard remain dark.",
 		"answers": [
 			{
@@ -10,37 +10,184 @@
 			{
 				"name": "Call a friend for a jumpstart",
 				"type": "triv_success",
-				"setattrs": {"batteryBad": true},
-				"correctDialogue": "With the help of your friend, you successfully start your car."
+				"nextEvent": "sceneFaultyBattery2",
+				"dialogue": "With the help of your friend, you successfully start your car."
 			},
 			{
 				"name": "Find another way to be picked up",
 				"type": "triv_success",
-				"setattrs": {"carStranded": true},
-				"correctDialogue": "You decide to take the bus home, but your car is still stranded."
+				"setattrs": {"carStranded": true, "carLocation": "school"},
+				"dialogue": "You decide to take the bus home, but your car is still stranded."
 			}
 		]
 	},
-	{
-		"scene": "You have a weird light that appeared on your dashboard. It oddly looks like a Red Genie lamp, what shall you do about this?",
+	"sceneFaultyBattery2": {
+		"scene": "As you're getting ready to leave, you realize that again, your car will not start.",
 		"answers": [
 			{
-				"name": "Find another way to be picked up",
+				"name": "Consult your mechanic",
 				"type": "triv_success",
-				"setattrs": {"carAtMechanic": true},
-				"correctDialogue": "Your dad manages to slip out of work to pick you up. Your car has been towed to the mechanic."
+				"dialogue": "John immediatly recognizes the situation. He instructs you to purchase a new battery for your car."
+			}
+		]
+	},
+	"sceneLowFuel": {
+		"scene": "All of a sudden you feel your car start shaking a little, you also hear what sounds like the engine surging. What do you do?",
+		"answers": [
+			{
+				"name": "Look at your dashboard",
+				"type": "one_time_dialogue",
+				"dialogue": "lookGasGauge",
+				"addOptions": [
+					{
+						"name": "Visit the nearest gas station",
+						"type": "triv_success",
+						"dialogue": "After filling up your car, you successfully make it back home."
+					}
+				]
 			},
 			{
-				"name": "Search it online",
+				"name": "Turn up the music",
+				"type": "one_time_dialogue",
+				"dialogue": "loudMusic"
+			},
+			{
+				"name": "Ignore it",
+				"type": "triv_failure",
+				"dialogue": "Suddenly, the car looses all power. As you coast to the side of the road, you realize that your gas meter is at empty.",
+				"hint": "lookDashboard",
+				"setattrs": {"carStranded": true, "carLocation": "nowhere"}
+			},
+			{
+				"name": "Call John",
+				"type": "triv_success",
+				"dialogue": "You call John and explain the situation. He explains that you are out of gas, and offers to drive over with a jerry can."
+			}
+		]
+	},
+	"sceneLowCoolant": {
+		"scene": "You notice steam coming out from under your hood, you pull off to the side of the road. What do you do?",
+		"answers": [
+			{
+				"name": "Pop the hood and look at your engine",
+				"type":"one_time_dialogue",
+				"dialogue": "PoppedHood",
+				"addOptions": [
+					{
+						"name": "Consult your mechanic",
+						"type": "triv_success",
+						"dialogue": "mechanicFillCoolant"
+					}
+				]
+			},
+			{
+				"name": "Doomscroll on your phone until the steam stops",
+				"setattrs": {"engineSeizeTime": 2},
+				"type": "triv_success",
+				"dialogue": "Congrats the steam stopped after doomscrolling for 10 minutes"
+			}
+		]
+	},
+	"sceneOilPressure": {
+		"scene": "A strange light appeared on your dashboard. It oddly looks like a red genie lamp. what will you do?",
+		"answers": [
+			{
+				"name": "Look it up online",
 				"type": "one_time_dialogue",
 				"dialogue": "searchOilLight"
 			},
 			{
-				"name": "Ignore it",
+				"name": "Find another way to be picked up",
+				"type": "triv_success",
+				"setattrs": {"carLocation": "mechanic"},
+				"dialogue": "Your dad manages to pick you up. Your car has been towed to the mechanic."
+			},
+			{
+				"name": "Ignore",
 				"type": "triv_success",
 				"setattrs": {"engineSeizeTime": 2},
-				"correctDialogue": "You decide to ignore the light. Nothing bad could happen... right?"
+				"dialogue": "You ignore the light."
+			}
+		]
+	},
+	"sceneWinterDischarge": {
+		"scene": "You decide not to drive your car all winter break, it's been really cold and you forgot to start the car. Now when you go to start it nothing happens.",
+		"answers": [
+			{
+				"name": "It's because I forgot to start it in the cold and now my battery is dead",
+				"type": "triv_success",
+				"dialogue": "newBattery"
+			},
+			{
+				"name": "It's because my oil froze and is now gumming the inside of my engine",
+				"type": "triv_failure",
+				"dialogue": "In Oregon it never gets cold enough to \"freeze\" the oil, oil freezes at a minimum of -4°F",
+				"hint": "newBattery"
+			},
+			{
+				"name": "It's because I forgot to change the carburetor filter and now it's not getting oil",
+				"type": "triv_failure",
+				"dialogue": "This answer has many things wrong with it, for one carburetors don't have a filter inside, mostly they have an air intake filter outside or a fuel filter also outside of the carburetor. Another flaw is that the carburetor doesn't use oil or pump oil anywhere. Also lastly most cars have switched to electronic fuel injection.",
+				"hint": "newBattery",
+				"removeRandomEncounter": true
+			},
+			{
+				"name": "It's because I forgot to change the spark plugs in my diesel",
+				"type": "triv_failure",
+				"dialogue": "Diesel engines do not use traditional spark plugs in the engine, but they use glow plugs due to how a diesel engine runs at a higher compression ratio.",
+				"hint": "newBattery"
+			}
+		]
+	},
+	"sceneTirePop": {
+		"scene": "You're driving down I-5 and notice some shrapnel in the road and it looks sharp. As you swerve around it you notice a bump and know that you hit it, you get out of the car and realize you hear a hissing sound in your rear right tire. Luckily you were close enough that you made it home, how do you check where the puncture is?",
+		"answers": [
+			{
+				"name": "Use a spray bottle with a mixture of soap and water.",
+				"type": "triv_success",
+				"dialogue": "soapPatchTire"
+			},
+			{
+				"name": "Grab a small handheld torch to find where the leak is.",
+				"type": "triv_failure",
+				"dialogue": "torchBad"
+			},
+			{
+				"name": "Just wait until the tire is flat and just change it cause why patch it?",
+				"type": "triv_failure",
+				"dialogue": "noPatience"
+			},
+			{
+				"name": "Take off the tire and put it in a big tub of water",
+				"type": "triv_failure",
+				"dialogue": "yesNo",
+				"hint": "soapPatchTire"
+			}
+		]
+	},
+	"cat": {
+		"scene": "cat",
+		"answers": [
+			{
+				"name": "Do the cat",
+				"type": "triv_failiure",
+				"dialogue": "You are a failure."
+			},
+			{
+				"name": "Do not the cat",
+				"type": "triv_success",
+				"dialogue": "yes"
+			}
+		]
+	},
+	"Scoop": {
+		"scene": "Sweep",
+		"answers": [
+			{
+				"name": "Don't sweep",
+				"type": "triv_success",
+				"dialogue": "yes"
 			}
 		]
 	}
-]
+}
